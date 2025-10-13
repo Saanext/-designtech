@@ -14,12 +14,13 @@ export function Typewriter({ words, className }: TypewriterProps) {
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    const typingSpeed = 150;
+    const deletingSpeed = 100;
+    const delayAfterTyping = 1500;
+
     const handleTyping = () => {
       const currentWord = words[wordIndex];
-      const typingSpeed = 150;
-      const deletingSpeed = 100;
-      const delayAfterTyping = 1500;
-
+      
       if (isDeleting) {
         if (text.length > 0) {
           setText(current => current.substring(0, current.length - 1));
