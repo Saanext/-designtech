@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "logo",
+      "description": "Interior Design Mastery logo",
+      "imageUrl": "https://picsum.photos/seed/logo/150/40",
+      "imageHint": "minimalist logo"
+    },
+    {
       "id": "hero-banner",
       "description": "A modern, bright interior living room with stylish furniture, possibly showing a person working on a laptop.",
       "imageUrl": "https://picsum.photos/seed/hero-banner/1920/1080",
