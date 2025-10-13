@@ -16,7 +16,7 @@ export function About() {
         </ScrollAnimationWrapper>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           <ScrollAnimationWrapper animation="slide-in-up" delay="0ms">
-            <div className="rounded-lg border bg-card p-8 text-center shadow-sm h-full">
+            <div className="rounded-lg border bg-card p-6 text-center shadow-sm h-full md:p-8">
               <h3 className="text-xl font-semibold">The Program</h3>
               <p className="mt-2 text-muted-foreground">
                 An immersive learning experience covering everything from fundamentals to advanced techniques in Lumia and SketchUp.
@@ -24,7 +24,7 @@ export function About() {
             </div>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animation="slide-in-up" delay="200ms">
-            <div className="rounded-lg border bg-card p-8 text-center shadow-sm h-full">
+            <div className="rounded-lg border bg-card p-6 text-center shadow-sm h-full md:p-8">
               <h3 className="text-xl font-semibold">Duration</h3>
               <p className="mt-2 text-muted-foreground">
                 Flexible 8-week online course, designed to fit your schedule. Learn at your own pace with lifetime access to materials.
@@ -32,7 +32,7 @@ export function About() {
             </div>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animation="slide-in-up" delay="400ms">
-            <div className="rounded-lg border bg-card p-8 text-center shadow-sm h-full">
+            <div className="rounded-lg border bg-card p-6 text-center shadow-sm h-full md:p-8">
               <h3 className="text-xl font-semibold">Future Scope</h3>
               <p className="mt-2 text-muted-foreground">
                 Gain job-ready skills, build a professional portfolio, and open doors to careers in design, architecture, and visualization.

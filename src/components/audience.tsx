@@ -37,8 +37,8 @@ export function Audience() {
           {audience.map((item, index) => (
             <ScrollAnimationWrapper key={item.title} animation="slide-in-up" delay={`${index * 150}ms`}>
               <Card className="h-full text-center">
-                <CardHeader>
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+                <CardHeader className="p-4 md:p-6">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 sm:h-20 sm:w-20">
                     {item.icon}
                   </div>
                   <CardTitle className="mt-4">{item.title}</CardTitle>

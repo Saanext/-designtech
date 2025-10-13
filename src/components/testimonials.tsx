@@ -53,11 +53,11 @@ export function Testimonials() {
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.map((testimonial) => {
                 const image = images.find(img => img.id === testimonial.imageId);
                 return (
-                  <CarouselItem key={testimonial.name} className="p-4 md:basis-1/2">
+                  <CarouselItem key={testimonial.name} className="p-2 md:p-4 md:basis-1/2">
                       <Card className="h-full">
                         <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
                           {image && (

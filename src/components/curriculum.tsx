@@ -47,11 +47,11 @@ export function Curriculum() {
         <div className="mt-16 space-y-12">
           {curriculumItems.map((item, index) => (
             <ScrollAnimationWrapper key={item.title} animation={index % 2 === 0 ? "slide-in-left" : "slide-in-right"}>
-              <div className="flex flex-col items-center gap-6 md:flex-row md:gap-8">
+              <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-8">
                 <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   {item.icon}
                 </div>
-                <div className="text-center md:text-left">
+                <div className="text-center sm:text-left">
                   <h3 className="text-xl font-semibold">{item.title}</h3>
                   <p className="mt-2 text-muted-foreground">{item.description}</p>
                 </div>
