@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-banner",
+      "description": "A modern, bright interior living room with stylish furniture, possibly showing a person working on a laptop.",
+      "imageUrl": "https://picsum.photos/seed/hero-banner/1920/1080",
+      "imageHint": "interior design"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "A smiling person's headshot.",
+      "imageUrl": "https://picsum.photos/seed/testimonial-1/100/100",
+      "imageHint": "portrait woman"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Another smiling person's headshot.",
+      "imageUrl": "https://picsum.photos/seed/testimonial-2/100/100",
+      "imageHint": "portrait man"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "A third smiling person's headshot.",
+      "imageUrl": "https://picsum.photos/seed/testimonial-3/100/100",
+      "imageHint": "person smiling"
+    }
+  ]
 }
