@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#08243C]">
-      <div className="container flex h-20 max-w-7xl items-center justify-between">
+      <div className="container flex h-24 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           {logoImage && (
             <Image
