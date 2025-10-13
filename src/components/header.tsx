@@ -30,10 +30,10 @@ export function Header() {
               src={logoImage.imageUrl}
               alt={logoImage.description}
               data-ai-hint={logoImage.imageHint}
-              width={150}
-              height={45}
+              width={170}
+              height={50}
               priority
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           )}
         </Link>
@@ -66,8 +66,8 @@ export function Header() {
                     src={logoImage.imageUrl}
                     alt={logoImage.description}
                     data-ai-hint={logoImage.imageHint}
-                    width={150}
-                    height={45}
+                    width={170}
+                    height={50}
                   />
                 )}
               </Link>
