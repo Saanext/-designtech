@@ -4,8 +4,8 @@ import { z } from "zod";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Invalid email address."),
-  phone: z.string().optional(),
+  email: z.string().email("Invalid email address.").optional().or(z.literal('')),
+  phone: z.string().min(1, "Phone number is required."),
   message: z.string().optional(),
 });
 
