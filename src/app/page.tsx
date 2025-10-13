@@ -5,8 +5,10 @@ import { Software } from '@/components/software';
 import { Audience } from '@/components/audience';
 import { Curriculum } from '@/components/curriculum';
 import { Highlights } from '@/components/highlights';
+import { Faq } from '@/components/faq';
 import { Testimonials } from '@/components/testimonials';
 import { Footer } from '@/components/footer';
+import { ContactFormSection } from '@/components/contact-form-section';
 
 export default function Home() {
   return (
@@ -19,7 +21,9 @@ export default function Home() {
         <Audience />
         <Curriculum />
         <Highlights />
+        <Faq />
         <Testimonials />
+        <ContactFormSection />
       </main>
       <Footer />
     </div>
