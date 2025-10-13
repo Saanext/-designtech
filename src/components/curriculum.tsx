@@ -44,16 +44,16 @@ export function Curriculum() {
             A comprehensive curriculum designed to take you from beginner to expert in SketchUp and Lumion.
           </p>
         </ScrollAnimationWrapper>
-        <div className="mt-16 space-y-12">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
           {curriculumItems.map((item, index) => (
-            <ScrollAnimationWrapper key={item.title} animation={index % 2 === 0 ? "slide-in-left" : "slide-in-right"}>
-              <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-8">
-                <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
+            <ScrollAnimationWrapper key={item.title} animation="slide-in-up" delay={`${index * 100}ms`}>
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   {item.icon}
                 </div>
-                <div className="text-center sm:text-left">
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{item.description}</p>
+                <div>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="mt-1 text-muted-foreground">{item.description}</p>
                 </div>
               </div>
             </ScrollAnimationWrapper>
