@@ -37,7 +37,7 @@ export function Header() {
   return (
     <header className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        hasScrolled ? "border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" : "bg-transparent"
+        hasScrolled ? "border-b border-border/40 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60" : "bg-transparent"
       )}>
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
@@ -58,20 +58,20 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                hasScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/80 hover:text-white"
+                "text-sm font-medium transition-colors hover:text-white",
+                hasScrolled ? "text-white/80" : "text-white/80"
                 )}
             >
               {link.label}
             </Link>
           ))}
-          <Button asChild>
+          <Button asChild variant="secondary">
             <Link href="#enroll">Enroll Now</Link>
           </Button>
         </nav>
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className={cn("md:hidden", !hasScrolled && "text-white border-white/50 hover:bg-white/10 hover:text-white")}>
+            <Button variant="outline" size="icon" className={cn("md:hidden", "text-white border-white/50 hover:bg-white/10 hover:text-white")}>
               <Menu className="h-4 w-4" />
               <span className="sr-only">Open menu</span>
             </Button>
