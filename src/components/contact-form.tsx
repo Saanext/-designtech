@@ -17,7 +17,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { submitContactForm } from "@/lib/actions";
-import { ScrollAnimationWrapper } from './scroll-animation-wrapper';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -65,80 +64,76 @@ export function ContactForm() {
   }
 
   return (
-    <section id="enroll" className="bg-card py-20 sm:py-32">
-      <div className="container mx-auto max-w-2xl px-4">
-        <ScrollAnimationWrapper className="text-center">
+    <div>
+        <div className="text-center mb-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Join Now</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Ready to start your design journey? Fill out the form below to enroll.
           </p>
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper animation="fade-in" delay="200ms" className="mt-12">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email Address</FormLabel>
-                      <FormControl>
-                        <Input placeholder="john.doe@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone Number (Optional)</FormLabel>
-                      <FormControl>
-                        <Input placeholder="(123) 456-7890" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message (Optional)</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Any questions or comments?"
-                          className="resize-none"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
-                  {form.formState.isSubmitting ? "Submitting..." : "Join Now"}
-                </Button>
-              </form>
-            </Form>
-        </ScrollAnimationWrapper>
-      </div>
-    </section>
+        </div>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Full Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="John Doe" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email Address</FormLabel>
+                  <FormControl>
+                    <Input placeholder="john.doe@example.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number (Optional)</FormLabel>
+                  <FormControl>
+                    <Input placeholder="(123) 456-7890" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message (Optional)</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Any questions or comments?"
+                      className="resize-none"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
+              {form.formState.isSubmitting ? "Submitting..." : "Join Now"}
+            </Button>
+          </form>
+        </Form>
+    </div>
   );
 }

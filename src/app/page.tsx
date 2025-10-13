@@ -5,7 +5,6 @@ import { Audience } from '@/components/audience';
 import { Curriculum } from '@/components/curriculum';
 import { Highlights } from '@/components/highlights';
 import { Testimonials } from '@/components/testimonials';
-import { ContactForm } from '@/components/contact-form';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
         <Curriculum />
         <Highlights />
         <Testimonials />
-        <ContactForm />
       </main>
       <Footer />
     </div>

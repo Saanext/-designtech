@@ -8,15 +8,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-primary text-primary-foreground">
-      <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
+      <div className="container flex h-18 max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           {logoImage && (
             <Image
               src={logoImage.imageUrl}
               alt={logoImage.description}
               data-ai-hint={logoImage.imageHint}
-              width={150}
-              height={40}
+              width={100}
+              height={20}
               priority
             />
           )}
