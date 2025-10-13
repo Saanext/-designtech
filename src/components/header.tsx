@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 
@@ -33,7 +33,7 @@ export function Header() {
               width={200}
               height={60}
               priority
-              className="h-auto w-32 sm:w-40"
+              className="h-auto w-40 sm:w-48"
             />
           )}
         </Link>
@@ -59,6 +59,7 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
+            <SheetTitle className="sr-only">Menu</SheetTitle>
             <div className="flex flex-col space-y-4 p-6">
               <Link href="/" onClick={closeSheet} className="mb-4">
                 {logoImage && (
@@ -68,7 +69,7 @@ export function Header() {
                     data-ai-hint={logoImage.imageHint}
                     width={170}
                     height={50}
-                    className="h-auto w-32"
+                    className="h-auto w-40"
                   />
                 )}
               </Link>
