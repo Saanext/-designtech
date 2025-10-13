@@ -33,7 +33,7 @@ export function Audience() {
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Who Can Join?</h2>
           <p className="mt-4 text-lg text-muted-foreground">This course is perfect for a wide range of creative individuals.</p>
         </ScrollAnimationWrapper>
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-2 gap-8 lg:grid-cols-4">
           {audience.map((item, index) => (
             <ScrollAnimationWrapper key={item.title} animation="slide-in-up" delay={`${index * 150}ms`}>
               <Card className="h-full text-center">
