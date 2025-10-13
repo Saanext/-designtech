@@ -17,7 +17,7 @@ export function Location() {
         <ScrollAnimationWrapper animation="fade-in" delay="200ms" className="mt-12">
           <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden border shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.996533355994!2d73.8545330148929!3d18.52932338740411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c09b7a4b3f8f%3A0x286b7e0f8c7e9b4d!2sShaniwar%20Wada!5e0!3m2!1sen!2sin!4v1620986791986!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.45788226257!2d73.74015607521789!3d18.64332836485848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9c058376a91%3A0xd6c5963983a758f1!2sSankalp%20Nagari%2C%20Dehu%20Road%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20412101%2C%20India!5e0!3m2!1sen!2sus!4v1719598282386!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
