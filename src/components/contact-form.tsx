@@ -130,7 +130,7 @@ export function ContactForm() {
               )}
             />
             <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
-              {form.formState.isSubmitting ? "Submitting..." : "Join Now"}
+              {form.formState.isSubmitting ? "Submitting..." : "Submit"}
             </Button>
           </form>
         </Form>
