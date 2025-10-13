@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#08243C]">
-      <div className="container flex h-16 max-w-7xl items-center justify-between">
+      <div className="container flex h-20 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           {logoImage && (
             <Image
@@ -33,7 +33,7 @@ export function Header() {
               width={170}
               height={50}
               priority
-              className="h-14 w-auto"
+              className="h-auto w-32"
             />
           )}
         </Link>
@@ -59,8 +59,8 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
-            <div className="flex flex-col space-y-4">
-              <Link href="/" onClick={closeSheet}>
+            <div className="flex flex-col space-y-4 p-6">
+              <Link href="/" onClick={closeSheet} className="mb-4">
                 {logoImage && (
                   <Image
                     src={logoImage.imageUrl}
@@ -68,6 +68,7 @@ export function Header() {
                     data-ai-hint={logoImage.imageHint}
                     width={170}
                     height={50}
+                    className="h-auto w-32"
                   />
                 )}
               </Link>
