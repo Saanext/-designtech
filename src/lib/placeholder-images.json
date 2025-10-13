@@ -9,13 +9,13 @@
     {
       "id": "sketchup-logo",
       "description": "SketchUp software logo",
-      "imageUrl": "https://picsum.photos/seed/sketchup-logo/200/200",
+      "imageUrl": "/SketchUp-logo.png",
       "imageHint": "sketchup logo"
     },
     {
       "id": "lumia-logo",
       "description": "Lumia software logo",
-      "imageUrl": "https://picsum.photos/seed/lumia-logo/200/200",
+      "imageUrl": "/8838f30d7a0660f1efd757b3bdad9847.jpg",
       "imageHint": "lumia logo"
     },
     {
