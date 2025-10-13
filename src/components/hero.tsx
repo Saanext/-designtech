@@ -41,7 +41,7 @@ export function Hero() {
           </div>
         </ScrollAnimationWrapper>
         <ScrollAnimationWrapper animation="slide-in-right" className="hidden lg:block">
-          <Card id="enroll">
+          <Card>
             <CardContent className="p-0">
               <div className="rounded-lg bg-background p-8 shadow-lg">
                 <ContactForm />
