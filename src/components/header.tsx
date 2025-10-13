@@ -24,17 +24,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#08243C]">
-      <div className="container flex h-20 max-w-7xl items-center justify-between sm:h-24">
+      <div className="flex h-16 items-center justify-between px-4 sm:h-20 sm:px-6">
         <Link href="/" className="flex items-center space-x-2">
           {logoImage && (
             <Image
               src={logoImage.imageUrl}
               alt={logoImage.description}
               data-ai-hint={logoImage.imageHint}
-              width={170}
-              height={50}
+              width={120}
+              height={20}
               priority
-              className="h-auto w-36 sm:w-48"
+              className="h-auto w-28 sm:w-36"
             />
           )}
         </Link>
