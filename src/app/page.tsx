@@ -8,7 +8,6 @@ import { Highlights } from '@/components/highlights';
 import { Faq } from '@/components/faq';
 import { Testimonials } from '@/components/testimonials';
 import { Footer } from '@/components/footer';
-import { ContactFormSection } from '@/components/contact-form-section';
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
         <Highlights />
         <Faq />
         <Testimonials />
-        <ContactFormSection />
       </main>
       <Footer />
     </div>
