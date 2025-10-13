@@ -5,6 +5,7 @@ import { Software } from '@/components/software';
 import { Audience } from '@/components/audience';
 import { Curriculum } from '@/components/curriculum';
 import { Highlights } from '@/components/highlights';
+import { Location } from '@/components/location';
 import { Faq } from '@/components/faq';
 import { Footer } from '@/components/footer';
 import { ContactFormSection } from '@/components/contact-form-section';
@@ -20,6 +21,7 @@ export default function Home() {
         <Audience />
         <Curriculum />
         <Highlights />
+        <Location />
         <Faq />
         <ContactFormSection />
       </main>
