@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Interior Design Mastery',
+  title: 'Design tech',
   description:
     'Master Interior Design with Lumia & SketchUp. Join our expert-led classes for students, professionals, and design enthusiasts.',
 };
