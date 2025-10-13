@@ -10,7 +10,7 @@ export function About() {
               About The Course
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Our comprehensive program is designed to equip you with the skills to master interior design using industry-standard software like Lumia and SketchUp.
+              Our comprehensive program is designed to equip you with the skills to master interior design using industry-standard software like Lumion and SketchUp.
             </p>
           </div>
         </ScrollAnimationWrapper>
@@ -19,7 +19,7 @@ export function About() {
             <div className="rounded-lg border bg-card p-6 text-center shadow-sm h-full md:p-8">
               <h3 className="text-xl font-semibold">The Program</h3>
               <p className="mt-2 text-muted-foreground">
-                An immersive learning experience covering everything from fundamentals to advanced techniques in Lumia and SketchUp.
+                An immersive learning experience covering everything from fundamentals to advanced techniques in Lumion and SketchUp.
               </p>
             </div>
           </ScrollAnimationWrapper>

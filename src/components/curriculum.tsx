@@ -9,8 +9,8 @@ const curriculumItems = [
   },
   {
     icon: <Palette className="h-8 w-8 text-primary" />,
-    title: "Lumia Rendering",
-    description: "Master the art of applying textures, colors, and lighting for photorealistic results in Lumia.",
+    title: "Lumion Rendering",
+    description: "Master the art of applying textures, colors, and lighting for photorealistic results in Lumion.",
   },
   {
     icon: <Ruler className="h-8 w-8 text-primary" />,
@@ -20,7 +20,7 @@ const curriculumItems = [
   {
     icon: <Lightbulb className="h-8 w-8 text-primary" />,
     title: "Advanced Lighting Techniques",
-    description: "Explore natural and artificial lighting in Lumia to create mood and highlight design elements.",
+    description: "Explore natural and artificial lighting in Lumion to create mood and highlight design elements.",
   },
   {
     icon: <FolderKanban className="h-8 w-8 text-primary" />,
@@ -41,7 +41,7 @@ export function Curriculum() {
         <ScrollAnimationWrapper className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">What You'll Learn</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A comprehensive curriculum designed to take you from beginner to expert in SketchUp and Lumia.
+            A comprehensive curriculum designed to take you from beginner to expert in SketchUp and Lumion.
           </p>
         </ScrollAnimationWrapper>
         <div className="mt-16 space-y-12">

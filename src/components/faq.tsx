@@ -9,11 +9,11 @@ import { ScrollAnimationWrapper } from './scroll-animation-wrapper';
 const faqItems = [
   {
     question: "Is this course suitable for beginners?",
-    answer: "Absolutely! We start with the fundamentals of both SketchUp and Lumia, so no prior experience is required. We'll guide you step-by-step from beginner to proficient."
+    answer: "Absolutely! We start with the fundamentals of both SketchUp and Lumion, so no prior experience is required. We'll guide you step-by-step from beginner to proficient."
   },
   {
     question: "What software do I need?",
-    answer: "You will need the latest versions of SketchUp and Lumia. We provide guidance on how to get student licenses or trials where applicable."
+    answer: "You will need the latest versions of SketchUp and Lumion. We provide guidance on how to get student licenses or trials where applicable."
   },
   {
     question: "How long will I have access to the course materials?",

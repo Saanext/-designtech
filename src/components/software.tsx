@@ -17,10 +17,10 @@ const software = [
     ],
   },
   {
-    id: 'lumia',
-    name: 'Lumia',
+    id: 'lumion',
+    name: 'Lumion',
     imageId: 'lumia-logo',
-    description: 'Bring your SketchUp models to life with Lumia. This powerful rendering software creates stunning, photorealistic images and videos with realistic lighting, materials, and effects.',
+    description: 'Bring your SketchUp models to life with Lumion. This powerful rendering software creates stunning, photorealistic images and videos with realistic lighting, materials, and effects.',
     benefits: [
       'Real-time rendering for instant feedback.',
       'Vast library of high-quality materials and objects.',

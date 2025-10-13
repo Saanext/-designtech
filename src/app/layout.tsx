@@ -5,7 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 export const metadata: Metadata = {
   title: 'Design tech',
   description:
-    'Master Interior Design with Lumia & SketchUp. Join our expert-led classes for students, professionals, and design enthusiasts.',
+    'Master Interior Design with Lumion & SketchUp. Join our expert-led classes for students, professionals, and design enthusiasts.',
 };
 
 export default function RootLayout({

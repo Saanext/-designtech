@@ -26,7 +26,7 @@ export function Hero() {
       <div className="container relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2">
         <ScrollAnimationWrapper className="space-y-6 text-center md:text-left" animation="slide-in-left">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Master <Typewriter words={["Interior Design", "3D Modeling", "Visualization"]} /> with Lumia & SketchUp
+            Master <Typewriter words={["Interior Design", "3D Modeling", "Visualization"]} /> with Lumion & SketchUp
           </h1>
           <p className="max-w-2xl text-lg text-white/80 md:text-xl mx-auto md:mx-0">
             Unlock your creative potential and build stunning 3D visualizations. Join our expert-led classes today.
