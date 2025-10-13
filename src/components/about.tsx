@@ -10,7 +10,7 @@ export function About() {
               About The Course
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Our comprehensive program is designed to equip you with the skills to master interior design using industry-standard software.
+              Our comprehensive program is designed to equip you with the skills to master interior design using industry-standard software like Lumia and SketchUp.
             </p>
           </div>
         </ScrollAnimationWrapper>
@@ -33,9 +33,9 @@ export function About() {
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animation="slide-in-up" delay="400ms">
             <div className="rounded-lg border bg-card p-8 text-center shadow-sm h-full">
-              <h3 className="text-xl font-semibold">Benefits</h3>
+              <h3 className="text-xl font-semibold">Future Scope</h3>
               <p className="mt-2 text-muted-foreground">
-                Gain job-ready skills, build a professional portfolio, and receive a certificate of completion.
+                Gain job-ready skills, build a professional portfolio, and open doors to careers in design, architecture, and visualization.
               </p>
             </div>
           </ScrollAnimationWrapper>
