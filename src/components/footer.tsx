@@ -9,6 +9,7 @@ export function Footer() {
         <div className="text-center sm:text-left">
           <p className="text-sm font-semibold">Interior Design Mastery</p>
           <p className="text-sm text-muted-foreground">contact@idmastery.com</p>
+          <p className="text-sm text-muted-foreground">8856096064</p>
         </div>
         <p className="text-center text-sm text-muted-foreground order-last sm:order-none">
           © <CurrentYear /> Interior Design Mastery. All rights reserved.
