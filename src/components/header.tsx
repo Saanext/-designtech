@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { DialogTitle } from "@radix-ui/react-dialog";
@@ -54,14 +54,13 @@ export function Header() {
         </nav>
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden text-white border-white/50 hover:bg-[#08243C] hover:text-white">
+            <Button variant="outline" size="icon" className="md:hidden text-white border-white/50 bg-[#08243C]">
               <Menu className="h-4 w-4" />
               <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
             <DialogTitle className="sr-only">Menu</DialogTitle>
-            <SheetTitle className="sr-only">Menu</SheetTitle>
             <div className="flex flex-col space-y-4 p-6">
               <Link href="/" onClick={closeSheet} className="mb-4">
                 {logoImage && (
