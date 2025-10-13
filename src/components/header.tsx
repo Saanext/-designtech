@@ -24,17 +24,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#08243C]">
-      <div className="flex h-16 items-center justify-between px-4 sm:h-20 sm:px-6">
+      <div className="flex h-[50px] items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center space-x-2">
           {logoImage && (
             <Image
               src={logoImage.imageUrl}
               alt={logoImage.description}
               data-ai-hint={logoImage.imageHint}
-              width={120}
-              height={20}
+              width={100}
+              height={16}
               priority
-              className="h-auto w-28 sm:w-36"
+              className="h-auto w-24"
             />
           )}
         </Link>
@@ -48,7 +48,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button asChild variant="secondary">
+          <Button asChild variant="secondary" size="sm">
             <Link href="#enroll">Enroll Now</Link>
           </Button>
         </nav>
@@ -68,9 +68,9 @@ export function Header() {
                     src={logoImage.imageUrl}
                     alt={logoImage.description}
                     data-ai-hint={logoImage.imageHint}
-                    width={170}
-                    height={50}
-                    className="h-auto w-40"
+                    width={120}
+                    height={20}
+                    className="h-auto w-28"
                   />
                 )}
               </Link>
