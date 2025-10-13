@@ -20,25 +20,11 @@ const navLinks = [
 export function Header() {
   const logoImage = PlaceHolderImages.find((p) => p.id === "logo");
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+  
   const closeSheet = () => setIsSheetOpen(false);
 
   return (
-    <header className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        hasScrolled ? "border-b border-border/40 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60" : "bg-transparent"
-      )}>
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-primary backdrop-blur supports-[backdrop-filter]:bg-primary/60">
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           {logoImage && (
@@ -57,10 +43,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-white",
-                hasScrolled ? "text-white/80" : "text-white/80"
-                )}
+              className="text-sm font-medium text-white/80 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
@@ -71,7 +54,7 @@ export function Header() {
         </nav>
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className={cn("md:hidden", "text-white border-white/50 hover:bg-white/10 hover:text-white")}>
+            <Button variant="outline" size="icon" className="md:hidden text-white border-white/50 hover:bg-white/10 hover:text-white">
               <Menu className="h-4 w-4" />
               <span className="sr-only">Open menu</span>
             </Button>
