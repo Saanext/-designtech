@@ -31,8 +31,8 @@ export function Header() {
               src={logoImage.imageUrl}
               alt={logoImage.description}
               data-ai-hint={logoImage.imageHint}
-              width={200}
-              height={60}
+              width={170}
+              height={50}
               priority
               className="h-auto w-40 sm:w-48"
             />
@@ -54,7 +54,7 @@ export function Header() {
         </nav>
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden text-white border-white/50 hover:bg-white/20 hover:text-white">
+            <Button variant="outline" size="icon" className="md:hidden text-white border-white/50 hover:bg-[#08243C] hover:text-white">
               <Menu className="h-4 w-4" />
               <span className="sr-only">Open menu</span>
             </Button>
