@@ -16,7 +16,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { submitContactForm } from "@/lib/actions";
+import { useFirestore } from "@/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { errorEmitter } from "@/firebase/error-emitter";
+import { FirestorePermissionError } from "@/firebase/errors";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -27,6 +30,7 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const { toast } = useToast();
+  const firestore = useFirestore();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -39,27 +43,44 @@ export function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const formData = new FormData();
-    Object.entries(values).forEach(([key, value]) => {
-      if (value) {
-        formData.append(key, value as string);
-      }
-    });
+    if (!firestore) {
+        toast({
+            title: "Error",
+            description: "Could not connect to the database. Please try again later.",
+            variant: "destructive",
+        });
+        return;
+    }
 
-    const response = await submitContactForm(null, formData);
+    try {
+        const submissionsCollection = collection(firestore, 'contactFormSubmissions');
+        await addDoc(submissionsCollection, {
+            fullName: values.name,
+            emailAddress: values.email,
+            phoneNumber: values.phone,
+            message: values.message,
+            submissionDate: serverTimestamp(),
+        });
+        
+        toast({
+            title: "Success!",
+            description: "Thank you for your message! We'll be in touch soon.",
+        });
+        form.reset();
 
-    if (response.success) {
-      toast({
-        title: "Success!",
-        description: response.message,
-      });
-      form.reset();
-    } else {
-      toast({
-        title: "Error",
-        description: response.message || "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+    } catch (error) {
+        console.error("Error saving to Firestore:", error);
+        
+        // This will be caught by the global error handler
+        if (error instanceof FirestorePermissionError) {
+             errorEmitter.emit('permission-error', error);
+        } else {
+             toast({
+                title: "Error",
+                description: "Something went wrong. Please try again.",
+                variant: "destructive",
+            });
+        }
     }
   }
 
