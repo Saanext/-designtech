@@ -4,7 +4,7 @@ import { ScrollAnimationWrapper } from './scroll-animation-wrapper';
 const highlights = [
   {
     icon: <Video className="h-6 w-6 text-primary" />,
-    text: "Expert-led video tutorials",
+    text: "Online Interactive session",
   },
   {
     icon: <Users className="h-6 w-6 text-primary" />,
