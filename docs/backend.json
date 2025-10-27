@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "ContactFormSubmission": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContactFormSubmission",
+      "type": "object",
+      "description": "Represents a contact form submission from the Interior Design Mastery website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the contact form submission."
+        },
+        "fullName": {
+          "type": "string",
+          "description": "The full name of the person submitting the form."
+        },
+        "emailAddress": {
+          "type": "string",
+          "description": "The email address of the person submitting the form.",
+          "format": "email"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "The phone number of the person submitting the form."
+        },
+        "message": {
+          "type": "string",
+          "description": "The message included in the contact form submission."
+        },
+        "submissionDate": {
+          "type": "string",
+          "description": "The date and time the form was submitted.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "fullName",
+        "emailAddress",
+        "phoneNumber",
+        "message",
+        "submissionDate"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/contactFormSubmissions/{contactFormSubmissionId}",
+        "definition": {
+          "entityName": "ContactFormSubmission",
+          "schema": {
+            "$ref": "#/backend/entities/ContactFormSubmission"
+          },
+          "description": "Stores contact form submissions. Includes fields for name, email, phone number, message, and submission date.",
+          "params": [
+            {
+              "name": "contactFormSubmissionId",
+              "description": "Unique identifier for the contact form submission."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to store contact form submissions. The root collection `contactFormSubmissions` will contain documents representing individual submissions. Each document will store all the data captured by the form. This structure provides simplicity and ease of querying. Security rules should restrict write access to authenticated users or allow unauthenticated writes if appropriate CAPTCHA or other anti-spam measures are in place. List operations will be secure by default, but you will have the option to create custom rules if you like."
+  }
+}
