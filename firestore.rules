@@ -1,37 +1,32 @@
 /**
- * @file Firestore Security Rules
- * @core_philosophy This ruleset governs access to contact form submissions. It prioritizes security by default, requiring authentication for all write operations (create, update, delete).
- * @data_structure Contact form submissions are stored in a top-level collection called `contactFormSubmissions`. Each document represents a single submission.
- * @key_security_decisions Write access to the `contactFormSubmissions` collection is restricted to authenticated users, ensuring that only legitimate submissions are stored. Read access is public.
+ * @fileoverview Firestore Security Rules for the Interior Design Mastery application.
+ *
+ * Core Philosophy:
+ * This ruleset allows unauthenticated users to submit contact form submissions.
+ *
+ * Data Structure:
+ * Contact form submissions are stored in the `contactFormSubmissions` collection.
+ *
+ * Key Security Decisions:
+ * - Unauthenticated access is granted for creating contact form submissions to allow easy contact.
  */
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
     /**
-     * @description Grants public read access and authenticated write access to the `contactFormSubmissions` collection.
-     * @path /databases/{database}/documents/contactFormSubmissions/{contactFormSubmissionId}
-     * @allow (get, list): Any user can read contact form submissions.
-     * @allow (create): An authenticated user can create a contact form submission.
-     * @deny (create): An unauthenticated user cannot create a contact form submission.
-     * @deny (update): No one can update contact form submissions.
-     * @deny (delete): No one can delete contact form submissions.
-     * @principle Allows authenticated users to submit contact forms while preventing unauthorized modifications and deletions.
+     * @description Allows anyone to create contact form submissions, but restricts all other operations.
+     * @path /contactFormSubmissions/{contactFormSubmissionId}
+     * @allow (create) Anyone can submit a contact form.
+     * @deny (get, list, update, delete) No one can read or modify existing contact forms.
+     * @principle Allows unauthenticated contact form submissions.
      */
     match /contactFormSubmissions/{contactFormSubmissionId} {
-      allow get, list: if true;
-      allow create: if isSignedIn();
+      allow get: if false;
+      allow list: if false;
+      allow create: if true;
       allow update: if false;
       allow delete: if false;
-    }
-
-    // Helper Functions
-    /**
-     * @description Checks if the user is signed in.
-     * @return True if the user is signed in, false otherwise.
-     */
-    function isSignedIn() {
-      return request.auth != null;
     }
   }
 }
