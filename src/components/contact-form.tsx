@@ -42,7 +42,7 @@ export function ContactForm() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof formSchema>) {
     if (!firestore) {
         toast({
             title: "Error",
@@ -52,36 +52,34 @@ export function ContactForm() {
         return;
     }
 
-    try {
-        const submissionsCollection = collection(firestore, 'contactFormSubmissions');
-        await addDoc(submissionsCollection, {
-            fullName: values.name,
-            emailAddress: values.email,
-            phoneNumber: values.phone,
-            message: values.message,
-            submissionDate: serverTimestamp(),
-        });
-        
-        toast({
-            title: "Success!",
-            description: "Thank you for your message! We'll be in touch soon.",
-        });
-        form.reset();
+    const submissionData = {
+        fullName: values.name,
+        emailAddress: values.email,
+        phoneNumber: values.phone,
+        message: values.message,
+        submissionDate: serverTimestamp(),
+    };
 
-    } catch (error) {
-        console.error("Error saving to Firestore:", error);
-        
-        // This will be caught by the global error handler
-        if (error instanceof FirestorePermissionError) {
-             errorEmitter.emit('permission-error', error);
-        } else {
-             toast({
-                title: "Error",
-                description: "Something went wrong. Please try again.",
-                variant: "destructive",
-            });
-        }
-    }
+    const submissionsCollection = collection(firestore, 'contactFormSubmissions');
+    
+    addDoc(submissionsCollection, submissionData)
+      .then(() => {
+          toast({
+              title: "Success!",
+              description: "Thank you for your message! We'll be in touch soon.",
+          });
+          form.reset();
+      })
+      .catch((error) => {
+          // This creates the detailed, contextual error.
+          const permissionError = new FirestorePermissionError({
+              path: submissionsCollection.path,
+              operation: 'create',
+              requestResourceData: submissionData,
+          });
+          // This emits the error to be caught by the global listener.
+          errorEmitter.emit('permission-error', permissionError);
+      });
   }
 
   return (
