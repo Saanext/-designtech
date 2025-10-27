@@ -16,10 +16,6 @@ const faqItems = [
     answer: "You will need the latest versions of SketchUp and Lumion. We provide guidance on how to get student licenses or trials where applicable."
   },
   {
-    question: "How long will I have access to the course materials?",
-    answer: "You get lifetime access to all course materials, including video lessons, project files, and any future updates. Learn at your own pace, whenever you want."
-  },
-  {
     question: "Will I get a certificate upon completion?",
     answer: "Yes, upon successfully completing the course and all its projects, you will receive a Certificate of Completion from Design tech to showcase your new skills."
   },
