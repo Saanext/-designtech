@@ -1,30 +1,39 @@
 /**
- * @file Firestore Security Rules
- * @core_philosophy This ruleset allows anyone to create contact form submissions,
- *  but restricts all other access. This is suitable for a public contact form where anyone can submit,
- *  but listing or reading existing submissions is not permitted.
- * @data_structure The data is stored in a flat collection at /contactFormSubmissions/{contactFormSubmissionId}.
- * @key_security_decisions
- *  - Anyone can create a contact form submission.
- *  - No one can read or list contact form submissions.
+ * @fileoverview Firestore Security Rules for the Interior Design Mastery application.
+ *
+ * Core Philosophy:
+ * This ruleset prioritizes security by default. It focuses on protecting contact form submissions.
+ *
+ * Data Structure:
+ * The primary data resides in the `/contactFormSubmissions/{contactFormSubmissionId}` collection.
+ *
+ * Key Security Decisions:
+ * - Unauthenticated writes are explicitly denied for contact form submissions due to the absence of CAPTCHA or anti-spam measures.
+ * - Read operations are denied by default, but can be set to public via security rules.
  */
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
     /**
-     * @description Allows anyone to create a contact form submission.  No one can read or list existing submissions.
+     * @description Controls access to contact form submissions.
      * @path /contactFormSubmissions/{contactFormSubmissionId}
-     * @allow (create) Anyone can create a contactFormSubmission with any data.
-     * @deny (get, list, update, delete) No one can get, list, update, or delete a contactFormSubmission.
-     * @principle Allows public creation of contact form submissions.
+     * @allow (create) - Denied. Authenticated users cannot create contact form submissions without CAPTCHA.
+     * @allow (update) - Denied. No one can update contact form submissions.
+     * @allow (delete) - Denied. No one can delete contact form submissions.
+     * @allow (get) - Public read is not allowed, and should be determined by security rules.
+     * @allow (list) - Public list is not allowed, and should be determined by security rules.
+     * @deny (create) - Any attempt to create a contact form submission.
+     * @deny (update) - Any attempt to update a contact form submission.
+     * @deny (delete) - Any attempt to delete a contact form submission.
+     * @principle Restricts write access to contact form submissions.
      */
     match /contactFormSubmissions/{contactFormSubmissionId} {
-      allow get: if false;
-      allow list: if false;
-      allow create: if true;
+      allow create: if false;
       allow update: if false;
       allow delete: if false;
+      allow get: if false;
+      allow list: if false;
     }
   }
 }
