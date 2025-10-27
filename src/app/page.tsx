@@ -9,6 +9,7 @@ import { Location } from '@/components/location';
 import { Faq } from '@/components/faq';
 import { Footer } from '@/components/footer';
 import { ContactFormSection } from '@/components/contact-form-section';
+import { PromoBanner } from '@/components/promo-banner';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <About />
+        <PromoBanner />
         <Software />
         <Audience />
         <Curriculum />
