@@ -26,9 +26,9 @@ const calculateTimeLeft = (targetDate: string): TimeLeft | null => {
 };
 
 const TimerCard = ({ value, label }: { value: number; label: string }) => (
-  <div className="flex flex-col items-center">
-    <div className="text-2xl sm:text-4xl font-bold text-primary">{String(value).padStart(2, '0')}</div>
-    <div className="text-xs sm:text-sm uppercase text-muted-foreground">{label}</div>
+  <div className="flex flex-col items-center rounded-lg bg-primary/10 p-3 sm:p-4">
+    <div className="text-3xl sm:text-4xl font-bold text-primary">{String(value).padStart(2, '0')}</div>
+    <div className="text-xs sm:text-sm uppercase tracking-wider text-muted-foreground">{label}</div>
   </div>
 );
 
@@ -52,7 +52,7 @@ export function CountdownTimer({ targetDate }: { targetDate: string }) {
 
   return (
     <div className="mt-8">
-      <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-sm mx-auto">
+      <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-sm mx-auto md:mx-0">
         <TimerCard value={timeLeft.days} label="Days" />
         <TimerCard value={timeLeft.hours} label="Hours" />
         <TimerCard value={timeLeft.minutes} label="Minutes" />
