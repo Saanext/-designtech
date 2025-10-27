@@ -3,8 +3,11 @@ import Link from 'next/link';
 import { ScrollAnimationWrapper } from './scroll-animation-wrapper';
 import { Badge } from './ui/badge';
 import { Clock } from 'lucide-react';
+import { CountdownTimer } from './countdown-timer';
 
 export function PromoBanner() {
+  const targetDate = '2025-11-10T00:00:00';
+
   return (
     <section id="promo" className="py-20 sm:py-0">
       <div className="container mx-auto max-w-5xl px-4">
@@ -20,6 +23,7 @@ export function PromoBanner() {
             <p className="mt-4 text-lg text-muted-foreground">
               Don't miss your chance to master interior design. Enroll now to secure your spot and get an exclusive discount.
             </p>
+            <CountdownTimer targetDate={targetDate} />
             <div className="mt-8">
               <Button asChild size="lg">
                 <Link href="#enroll">Enroll Now & Claim Offer</Link>
