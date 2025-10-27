@@ -13,6 +13,16 @@ import {
 } from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Button } from '@/components/ui/button';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
+// Extend the autotable interface for jsPDF
+declare module 'jspdf' {
+  interface jsPDF {
+    autoTable: (options: any) => jsPDF;
+  }
+}
 
 interface ContactFormSubmission {
   id: string;
@@ -44,13 +54,34 @@ export default function FormDataPage() {
     if (!timestamp) return 'N/A';
     return new Date(timestamp.seconds * 1000).toLocaleString();
   };
+
+  const downloadPdf = () => {
+    if (!submissions) return;
+
+    const doc = new jsPDF();
+    doc.autoTable({
+      head: [['Full Name', 'Email', 'Phone Number', 'Message', 'Submission Date']],
+      body: submissions.map(sub => [
+        sub.fullName,
+        sub.emailAddress || 'N/A',
+        sub.phoneNumber,
+        sub.message || 'N/A',
+        formatDate(sub.submissionDate),
+      ]),
+    });
+
+    doc.save('contact-submissions.pdf');
+  };
   
   return (
     <div className="min-h-screen bg-background">
       <main className="container mx-auto py-10 px-4">
         <Card>
-          <CardHeader>
+          <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Contact Form Submissions</CardTitle>
+            <Button onClick={downloadPdf} disabled={!submissions || submissions.length === 0}>
+              Download PDF
+            </Button>
           </CardHeader>
           <CardContent>
             {isLoading && (
