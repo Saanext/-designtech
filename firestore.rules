@@ -1,38 +1,50 @@
 /**
- * @file Firestore Security Rules
- * @description This ruleset secures the contactFormSubmissions collection, ensuring only authenticated users can submit contact forms.
+ * @fileoverview Firestore Security Rules for the Interior Design Mastery application.
  *
  * Core Philosophy:
- *  This ruleset prioritizes protecting the contact form submissions from unauthorized access. It assumes submissions should be publicly readable but only creatable by authenticated users.
+ * This ruleset prioritizes security by default, restricting all write access to the `contactFormSubmissions` collection
+ * unless explicitly allowed. Read access is initially open but can be restricted as needed. This allows the capture of contact form submissions.
  *
  * Data Structure:
- *  All contact form submission data is stored in the /contactFormSubmissions/{contactFormSubmissionId} collection.
+ * The primary data is stored in the `contactFormSubmissions` collection, with each document representing a single form submission.
+ * The document ID is located at `/contactFormSubmissions/{contactFormSubmissionId}`.
  *
  * Key Security Decisions:
- *  - Write access to the /contactFormSubmissions collection is restricted to authenticated users.
- *  - Read access to the /contactFormSubmissions collection is open to all.
+ * - Write operations to the `contactFormSubmissions` collection are only enabled for authenticated users.
+ * - List operations are initially open but should be secured based on evolving needs.
+ *
  */
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
     /**
-     * @description Controls access to the contactFormSubmissions collection, allowing authenticated users to create submissions.
+     * @description Secures the `contactFormSubmissions` collection, allowing only authenticated users to submit contact forms.
      * @path /contactFormSubmissions/{contactFormSubmissionId}
-     * @allow (create) User is authenticated and creating a new contact form submission.
-     *   request.auth.uid != null
-     * @deny (create) User is not authenticated.
-     *   request.auth.uid == null
-     * @principle Allows only authenticated users to create contact form submissions.
+     * @allow (create) - An authenticated user can create a contact form submission.
+     *   Example: User with UID 'user123' submits a new contact form.
+     * @deny (create) - An unauthenticated user attempts to submit a contact form.
+     *   Example: Anonymous user tries to create a new contact form submission.
+     * @allow (get, list) - Anyone can read contact form submissions.
+     * @deny (update, delete) - No one can update or delete contact form submissions.
+     * @principle Restricts write access to only authenticated users for contact form submissions.
      */
     match /contactFormSubmissions/{contactFormSubmissionId} {
-      allow get: if true;
-      allow list: if true;
+      // Anyone can read contact form submissions
+      allow get, list: if true;
+
+      // Only signed-in users can create contact form submissions
       allow create: if isSignedIn();
-      allow update: if false;
-      allow delete: if false;
+
+      // No one can update or delete contact form submissions
+      allow update, delete: if false;
     }
 
+    // --- Helper Functions ---
+    /**
+     * @description Checks if the user is signed in.
+     * @return True if the user is authenticated, false otherwise.
+     */
     function isSignedIn() {
       return request.auth != null;
     }
