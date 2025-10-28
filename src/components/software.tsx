@@ -24,7 +24,7 @@ const software = [
     benefits: [
       'Real-time rendering for instant feedback.',
       'Vast library of high-quality materials and objects.',
-      'Create breathtaking images, videos, and panoramas.',
+      'Create breathtaking images, and videos.',
       'Intuitive workflow for designers.',
     ],
   },
