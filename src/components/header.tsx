@@ -48,9 +48,6 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link href="/formdata" className="text-sm font-medium text-white/80 transition-colors hover:text-white">
-            Form Data
-          </Link>
           <Button asChild variant="secondary" size="sm">
             <Link href="#enroll">Enroll Now</Link>
           </Button>
@@ -87,9 +84,6 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-               <Link href="/formdata" className="text-muted-foreground hover:text-foreground" onClick={closeSheet}>
-                Form Data
-              </Link>
               <Button asChild>
                 <Link href="#enroll" onClick={closeSheet}>Enroll Now</Link>
               </Button>
